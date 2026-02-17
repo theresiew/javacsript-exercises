@@ -167,3 +167,51 @@ let gameBoard = [
 gameBoard[1][1] = 1; 
 console.log(gameBoard[0][2]);
 
+//exercises 16
+for (let row = 0; row < gameBoard.length; row++) {
+  for (let col = 0; col < gameBoard[row].length; col++) {
+    console.log(`[${row}][${col}]: ${gameBoard[row][col]}`);
+  }
+}
+
+let sum = 0;
+for (let row of gameBoard) {
+  for (let val of row) {
+    sum += val;
+
+  }
+}
+console.log("Sum:", sum); 
+
+//Project 1: Student Result System
+let students = [
+  {name: "A", score: 85},
+  {name: "B", score: 45},
+  {name: "C", score: 92},
+  {name: "D", score: 68}
+];
+
+let passed = students.filter(s => s.score >= 70);
+console.log(passed);
+
+let avg = students.reduce((sum, s) => sum + s.score, 0) / students.length;
+console.log("Average:", avg); 
+
+let topScorer = students.reduce((top, s) => s.score > top.score ? s : top);
+console.log("Top scorer:", topScorer);
+
+//Project 2: Shopping Cart
+let cart = [
+  {id: 1, name: "Shirt", price: 20, quantity: 2},
+  {id: 2, name: "Pants", price: 50, quantity: 1}
+];
+
+let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+console.log("Total:", total); 
+
+cart = cart.map(item => item.id === 1 ? {...item, quantity: 3} : item);
+console.log(cart);
+
+cart = cart.filter(item => item.id !== 2);
+console.log(cart);
+
