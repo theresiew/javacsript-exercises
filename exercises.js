@@ -71,3 +71,15 @@ console.log(userAges.some(age => age < 18));
 console.log(userAges.every(age => age >= 18)); 
 console.log(userAges.some(age => age % 5 === 0));
 
+//exercises 7
+let dataPoints = [42, 10, 500, 2, 77];
+
+let ascending = [...dataPoints].sort((a, b) => a - b);
+console.log(ascending); // [2, 10, 42, 77, 500]
+
+let descending = [...dataPoints].sort((a, b) => b - a);
+console.log(descending);
+
+dataPoints.reverse();
+console.log(dataPoints);
+
