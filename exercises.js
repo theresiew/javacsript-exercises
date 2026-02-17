@@ -103,3 +103,13 @@ let nestedList = [1, [2, 3], [4, [5, 6]], 7];
 console.log(nestedList.flat());          
 console.log(nestedList.flat(Infinity)); 
 
+//exercises 10
+let pricesUSD = [10.50, 20.00, 5.25];
+const rate = 1.3;
+
+let localPrices = pricesUSD.map(price => price * rate);
+console.log(localPrices); 
+
+let priceStrings = pricesUSD.map(price => `Item price: $${price.toFixed(2)}`);
+console.log(priceStrings);
+
