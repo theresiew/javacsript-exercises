@@ -150,3 +150,10 @@ console.log(users);
 users.sort((a, b) => a.age - b.age || a.name.localeCompare(b.name));
 console.log(users);
 
+//exercises 14
+let names = users.map(user => user.name);
+console.log(names); 
+
+let olderThan28 = users.filter(user => user.age > 28);
+console.log(olderThan28); 
+
