@@ -137,3 +137,16 @@ console.log(belowAverage);
   console.log("Prices over $15:", countOver15); 
 }
 
+//exercises 13
+let users = [
+  {name: "Zoe",     age: 30},
+  {name: "Adam",    age: 25},
+  {name: "Charlie", age: 30}
+];
+
+users.sort((a, b) => a.age - b.age);
+console.log(users);
+
+users.sort((a, b) => a.age - b.age || a.name.localeCompare(b.name));
+console.log(users);
+
