@@ -83,3 +83,17 @@ console.log(descending);
 dataPoints.reverse();
 console.log(dataPoints);
 
+//exercises 8
+let arr1 = ["A", "B"];
+let arr2 = ["C", "D"];
+let sentenceParts = ["Hello", "world", "this", "is", "great"];
+
+let combined = arr1.concat(arr2);
+console.log(combined);
+
+let sentence = sentenceParts.join(" ");
+console.log(sentence); 
+
+let middle = sentenceParts.slice(1, 4);
+console.log(middle); 
+
