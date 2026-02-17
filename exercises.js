@@ -51,3 +51,16 @@ console.log(studentNames.lastIndexOf("Alice"));
 console.log(studentNames.includes("Charlie"));  
 console.log(studentNames.includes("Eve")); 
 
+//exercises 5
+let products = [
+  {id: 1, name: "Laptop",   price: 1200},
+  {id: 2, name: "Mouse",    price: 25},
+  {id: 3, name: "Keyboard", price: 75}
+];
+
+let foundProduct = products.find(p => p.id === 2);
+console.log(foundProduct); 
+
+let expensiveIndex = products.findIndex(p => p.price > 1000);
+console.log(expensiveIndex); 
+
