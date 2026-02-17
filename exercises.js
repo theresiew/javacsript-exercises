@@ -221,3 +221,59 @@ let data = [1, 5, 2, 8, 5, 1, 9, 2];
 let uniqueData = data.filter((value, index) => data.indexOf(value) === index);
 console.log(uniqueData);
 
+
+//Challenge 3: Shallow vs Deep Copy
+let company = [{name: "A", details: {city: "NY"}}];
+
+let spreadCopy = [...company];
+spreadCopy[0].details.city = "LA";
+console.log(company[0].details.city);   
+console.log(spreadCopy[0].details.city); 
+
+
+let deepCopy = JSON.parse(JSON.stringify(company));
+deepCopy[0].details.city = "Chicago";
+console.log(company[0].details.city);
+console.log(deepCopy[0].details.city);
+//Challenge 2: Custom Reduce
+function myReduce(array, callback, initialValue) {
+  let accumulator = initialValue;
+  for (let i = 0; i < array.length; i++) {
+    accumulator = callback(accumulator, array[i], i, array);
+  }
+  return accumulator;
+}
+
+let summ = myReduce([1, 2, 3, 4, 5], (acc, val) => acc + val, 0);
+console.log(summ);
+
+//Final Challenge: Tic-Tac-Toe
+
+let board = [
+  ["", "", ""],
+  ["", "", ""],
+  ["", "", ""]
+];
+
+board[0][0] = "X";
+board[1][1] = "O";
+
+function checkWin(board, player) {
+
+  for (let row of board) {
+    if (row.every(cell => cell === player)) return true;
+  }
+
+  for (let col = 0; col < 3; col++) {
+    if (board.every(row => row[col] === player)) return true;
+  }
+
+  if (board[0][0] === player && board[1][1] === player && board[2][2] === player) return true;
+
+  if (board[0][2] === player && board[1][1] === player && board[2][0] === player) return true;
+
+  return false;
+}
+
+console.log(checkWin(board, "X")); 
+console.log(checkWin(board, "O")); 
