@@ -64,3 +64,10 @@ console.log(foundProduct);
 let expensiveIndex = products.findIndex(p => p.price > 1000);
 console.log(expensiveIndex); 
 
+//exercises 6
+let userAges = [18, 24, 33, 16, 40];
+
+console.log(userAges.some(age => age < 18));   
+console.log(userAges.every(age => age >= 18)); 
+console.log(userAges.some(age => age % 5 === 0));
+
