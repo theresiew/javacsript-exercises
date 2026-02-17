@@ -215,3 +215,9 @@ console.log(cart);
 cart = cart.filter(item => item.id !== 2);
 console.log(cart);
 
+//Challenge 1: Remove Duplicates
+let data = [1, 5, 2, 8, 5, 1, 9, 2];
+
+let uniqueData = data.filter((value, index) => data.indexOf(value) === index);
+console.log(uniqueData);
+
