@@ -123,3 +123,17 @@ let average = testScores.reduce((sum, s) => sum + s, 0) / testScores.length;
 let belowAverage = testScores.filter(score => score < average);
 console.log(belowAverage); 
 
+//exercises 12
+{
+  let pricesUSD = [10.50, 20.00, 5.25];
+
+  let total = pricesUSD.reduce((sum, price) => sum + price, 0);
+  console.log("Total cost:", total); 
+
+  let maxPrice = pricesUSD.reduce((max, price) => price > max ? price : max, 0);
+  console.log("Max price:", maxPrice); 
+
+  let countOver15 = pricesUSD.reduce((count, price) => price > 15 ? count + 1 : count, 0);
+  console.log("Prices over $15:", countOver15); 
+}
+
