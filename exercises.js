@@ -43,3 +43,11 @@ spreadCopy[2] = 50;
 console.log(originalScores); 
 console.log(spreadCopy);  
 
+//exercises 4
+let studentNames = ["Alice", "Bob", "Charlie", "Alice", "David"];
+
+console.log(studentNames.indexOf("Alice"));     
+console.log(studentNames.lastIndexOf("Alice")); 
+console.log(studentNames.includes("Charlie"));  
+console.log(studentNames.includes("Eve")); 
+
