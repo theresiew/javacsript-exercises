@@ -27,3 +27,19 @@ console.log(inventory);
 
 inventory.splice(1, 1, 25, 35);
 console.log(inventory);
+
+//exercises 3
+
+let originalScores = [90, 85, 78];
+
+
+let referenceCopy = originalScores;
+referenceCopy[0] = 100;
+console.log(originalScores); 
+console.log(referenceCopy);  
+
+let spreadCopy = [...originalScores];
+spreadCopy[2] = 50;
+console.log(originalScores); 
+console.log(spreadCopy);  
+
