@@ -157,3 +157,13 @@ console.log(names);
 let olderThan28 = users.filter(user => user.age > 28);
 console.log(olderThan28); 
 
+//exercises 15
+let gameBoard = [
+  [0, 0, 0],
+  [0, 0, 0],
+  [0, 0, 0]
+];
+
+gameBoard[1][1] = 1; 
+console.log(gameBoard[0][2]);
+
