@@ -32,7 +32,6 @@ console.log(inventory);
 
 let originalScores = [90, 85, 78];
 
-
 let referenceCopy = originalScores;
 referenceCopy[0] = 100;
 console.log(originalScores); 
@@ -75,7 +74,7 @@ console.log(userAges.some(age => age % 5 === 0));
 let dataPoints = [42, 10, 500, 2, 77];
 
 let ascending = [...dataPoints].sort((a, b) => a - b);
-console.log(ascending); // [2, 10, 42, 77, 500]
+console.log(ascending);
 
 let descending = [...dataPoints].sort((a, b) => b - a);
 console.log(descending);
@@ -178,7 +177,6 @@ let sum = 0;
 for (let row of gameBoard) {
   for (let val of row) {
     sum += val;
-
   }
 }
 console.log("Sum:", sum); 
@@ -206,8 +204,8 @@ let cart = [
   {id: 2, name: "Pants", price: 50, quantity: 1}
 ];
 
-let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-console.log("Total:", total); 
+let totalCost = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+console.log("Total:", totalCost); 
 
 cart = cart.map(item => item.id === 1 ? {...item, quantity: 3} : item);
 console.log(cart);
@@ -221,20 +219,6 @@ let data = [1, 5, 2, 8, 5, 1, 9, 2];
 let uniqueData = data.filter((value, index) => data.indexOf(value) === index);
 console.log(uniqueData);
 
-
-//Challenge 3: Shallow vs Deep Copy
-let company = [{name: "A", details: {city: "NY"}}];
-
-let spreadCopy = [...company];
-spreadCopy[0].details.city = "LA";
-console.log(company[0].details.city);   
-console.log(spreadCopy[0].details.city); 
-
-
-let deepCopy = JSON.parse(JSON.stringify(company));
-deepCopy[0].details.city = "Chicago";
-console.log(company[0].details.city);
-console.log(deepCopy[0].details.city);
 //Challenge 2: Custom Reduce
 function myReduce(array, callback, initialValue) {
   let accumulator = initialValue;
@@ -247,8 +231,20 @@ function myReduce(array, callback, initialValue) {
 let summ = myReduce([1, 2, 3, 4, 5], (acc, val) => acc + val, 0);
 console.log(summ);
 
-//Final Challenge: Tic-Tac-Toe
+//Challenge 3: Shallow vs Deep Copy
+let company = [{name: "A", details: {city: "NY"}}];
 
+let spreadCopyCompany = [...company];
+spreadCopyCompany[0].details.city = "LA";
+console.log(company[0].details.city);   
+console.log(spreadCopyCompany[0].details.city); 
+
+let deepCopy = JSON.parse(JSON.stringify(company));
+deepCopy[0].details.city = "Chicago";
+console.log(company[0].details.city);
+console.log(deepCopy[0].details.city);
+
+//Final Challenge: Tic-Tac-Toe
 let board = [
   ["", "", ""],
   ["", "", ""],
@@ -259,21 +255,22 @@ board[0][0] = "X";
 board[1][1] = "O";
 
 function checkWin(board, player) {
-
+  // Check rows
   for (let row of board) {
     if (row.every(cell => cell === player)) return true;
   }
 
+  // Check columns
   for (let col = 0; col < 3; col++) {
     if (board.every(row => row[col] === player)) return true;
   }
 
+  // Check diagonals
   if (board[0][0] === player && board[1][1] === player && board[2][2] === player) return true;
-
   if (board[0][2] === player && board[1][1] === player && board[2][0] === player) return true;
 
   return false;
 }
 
 console.log(checkWin(board, "X")); 
-console.log(checkWin(board, "O")); 
+console.log(checkWin(board, "O"));
